@@ -1,19 +1,15 @@
-import Head from "next/head";
 import Link from "next/Link";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export default function Home({ data }) {
   console.log(data);
 
   return (
     <div className=" bg-gradient-to-tr from-pink-400 to-purple-400 text-white min-h-screen">
-      <Head>
-        <title>Ed's Sports List</title>
-        <meta name="description" content="Sports leagues and standings" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Header />
 
       <main className="cont">
-        <h1 className="text-5xl font-bold mb-8">Ed's Sport List</h1>
         <h2 className="text-3xl mb-4">The Sports</h2>
         <div className="flex flex-wrap">
           {data &&
@@ -31,11 +27,7 @@ export default function Home({ data }) {
         </div>
       </main>
 
-      <footer className="text-center">
-        <a href="https://edtervit.co.uk" target="_blank">
-          Created by Ed Tervit - Portfolio EdTervit.co.uk
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
