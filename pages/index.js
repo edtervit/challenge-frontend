@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export default function Home({ data }) {
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className=" bg-gradient-to-tr from-pink-400 to-purple-400 text-white min-h-screen">
@@ -11,15 +11,14 @@ export default function Home({ data }) {
 
       <main className="cont">
         <h2 className="text-3xl mb-4">The Sports</h2>
+        <p>Click a sport to view it's leagues.</p>
         <div className="flex flex-wrap">
           {data &&
             data.map((sport, index) => (
-              <Link key={sport.sportID} href={`/sports/${sport.sportID}`}>
+              <Link key={sport.sportID} href={`/${sport.sportID}`}>
                 <a className="w-1/2  text-purple-400 cursor-pointer hover:scale-105 transform transition-all ">
                   <div className="bg-white m-4 rounded-md py-4 shadow-lg ">
-                    <h3 className="font-bold">
-                      {index + 1}. {sport.sportName}
-                    </h3>
+                    <h3 className="font-bold">{sport.sportName}</h3>
                   </div>
                 </a>
               </Link>
@@ -34,7 +33,7 @@ export default function Home({ data }) {
 
 // This gets called on every request
 export async function getServerSideProps() {
-  // Fetch data from external API
+  // Fetch data from laravel API
   const url = `${process.env.BACKEND_URL}api/sports`;
   const res = await fetch(url);
   const data = await res.json();
