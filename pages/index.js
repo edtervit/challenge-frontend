@@ -16,7 +16,7 @@ export default function Home({ data }) {
           {data &&
             data.map((sport, index) => (
               <Link key={sport.sportID} href={`/${sport.sportID}`}>
-                <a className="w-1/2  text-purple-400 cursor-pointer hover:scale-105 transform transition-all ">
+                <a className="w-full md:w-1/2  text-purple-400 cursor-pointer hover:scale-105 transform transition-all ">
                   <div className="bg-white m-4 rounded-md py-4 shadow-lg ">
                     <h3 className="font-bold">{sport.sportName}</h3>
                   </div>
