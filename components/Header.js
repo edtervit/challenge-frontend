@@ -9,7 +9,19 @@ function Header() {
         <meta name="description" content="Sports leagues and standings" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className="text-5xl font-bold p-8 text-center">Ed's Sport List</h1>
+      <header className="flex justify-between p-5 bg-black bg-opacity-10 items-center">
+        <a href="/">
+          <h1 className=" text-lg md:text-4xl font-bold  text-center">
+            Ed's Sport List
+          </h1>
+        </a>
+        <a
+          href="/"
+          className=" text-lg md:text-2xl font-bold p-2 rounded-md  text-center border border-white"
+        >
+          Home
+        </a>
+      </header>
     </>
   );
 }
