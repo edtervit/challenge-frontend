@@ -3,9 +3,6 @@ import Header from "../../components/Header";
 import { useState, useEffect } from "react";
 
 export default function LeaguePage({ currentName, teamsData }) {
-  console.log("raw teams: ");
-  console.log(teamsData);
-
   //I seemed to have a made a mistake when importing the data into the laravel database as I have found duplicates
   //I don't have time to re-import all the data but thought I could use this as an example of handling data that may be out of my control
   //the following code prevents duplicates of the same team
@@ -19,9 +16,6 @@ export default function LeaguePage({ currentName, teamsData }) {
       niceTeams.push(team);
     }
   });
-
-  console.log("nice teams: ");
-  console.log(niceTeams);
 
   //create some state for the modals
   const [showModal, setShowModal] = useState(false);

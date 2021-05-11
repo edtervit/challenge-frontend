@@ -3,8 +3,6 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export default function Home({ data }) {
-  // console.log(data);
-
   return (
     <div className=" bg-gradient-to-tr from-pink-400 to-purple-400 text-white min-h-screen">
       <Header />
