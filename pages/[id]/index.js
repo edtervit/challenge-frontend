@@ -2,7 +2,7 @@ import Link from "next/Link";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
-export default function SportPage({ currentName, currentID, currentLeagues }) {
+export default function SportPage({ currentName, currentLeagues }) {
   return (
     <div className=" bg-gradient-to-tr from-pink-400 to-purple-400 text-white min-h-screen">
       <Header />
@@ -13,10 +13,7 @@ export default function SportPage({ currentName, currentID, currentLeagues }) {
         <div className="flex flex-wrap">
           {currentLeagues &&
             currentLeagues.map((league, index) => (
-              <Link
-                key={league.leagueID}
-                href={`/${currentID}/${league.leagueID}`}
-              >
+              <Link key={league.leagueID} href={`/league/${league.leagueID}`}>
                 <a className="w-full  text-purple-400 cursor-pointer hover:scale-105 transform transition-all ">
                   <div
                     className={`bg-white m-2 rounded-md py-4 shadow-lg max-w-sm mx-auto ${
@@ -84,5 +81,5 @@ export async function getStaticProps(context) {
   const currentLeagues = leagueData.filter((e) => e.sportName == currentName);
 
   // Pass data to the page via props
-  return { props: { currentName, currentID, currentLeagues }, revalidate: 60 };
+  return { props: { currentName, currentLeagues }, revalidate: 60 };
 }
