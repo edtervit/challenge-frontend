@@ -78,6 +78,12 @@ export default function LeaguePage({ currentName, teamsData }) {
                         className="bg-white block m-auto w-11/12 md:w-10/12 text-purple-400 p-5 space-y-4 relative max-w-screen-lg"
                         onClick={(event) => event.stopPropagation()}
                       >
+                        <p
+                          onClick={() => setShowModal(false)}
+                          className="md:hidden cursor-pointer border border-purple-400 p-2"
+                        >
+                          Close Popup
+                        </p>
                         <h4 className="text-2xl mb-4 ">
                           {team.teamName} - ({team.teamID})
                         </h4>
