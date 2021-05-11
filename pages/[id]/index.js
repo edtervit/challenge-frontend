@@ -23,9 +23,10 @@ export default function SportPage({ currentName, currentID, currentLeagues }) {
                       index % 2 == 0 && "bg-gray-100"
                     }`}
                   >
-                    <h3 className="font-bold">
+                    <h3 className="font-bold inline">
                       {index + 1}. {league.leagueName}
                     </h3>
+                    <p className="inline"> ({league.leagueID})</p>
                   </div>
                 </a>
               </Link>
